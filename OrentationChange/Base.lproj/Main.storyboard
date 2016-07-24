@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OrentationChange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVZ-1Q-eft">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0x-dJ-CCQ">
+                                <state key="normal" title="只支持横屏"/>
+                                <connections>
+                                    <segue destination="pcb-WM-u3H" kind="showDetail" id="knR-my-JAw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LU7-6N-cyX">
+                                <state key="normal" title="只支持横屏（导航）"/>
+                                <connections>
+                                    <segue destination="h8G-7Y-U4R" kind="presentation" id="1Wp-cL-6Rx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LU7-6N-cyX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="5Se-j6-dFB"/>
+                            <constraint firstAttribute="trailing" secondItem="x0x-dJ-CCQ" secondAttribute="trailing" constant="40" id="I3b-mo-yIc"/>
+                            <constraint firstItem="EVZ-1Q-eft" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cLn-Ph-Ab9"/>
+                            <constraint firstItem="LU7-6N-cyX" firstAttribute="top" secondItem="x0x-dJ-CCQ" secondAttribute="top" id="enu-Qg-FXu"/>
+                            <constraint firstItem="EVZ-1Q-eft" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lYy-ku-qsj"/>
+                            <constraint firstItem="x0x-dJ-CCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="myI-t1-ZHI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicatorLabel" destination="EVZ-1Q-eft" id="gnn-Kx-1If"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Landscape View Controller-->
+        <scene sceneID="OHC-PY-MZw">
+            <objects>
+                <viewController id="pcb-WM-u3H" customClass="LandscapeViewController" customModule="OrentationChange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aH9-cW-kPJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wrU-Yy-cTt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UV2-tr-1aY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdZ-64-pPb">
+                                <state key="normal" title="DIsmiss"/>
+                                <connections>
+                                    <segue destination="gB5-OC-KO6" kind="unwind" unwindAction="backToOriginWithSegue:" id="fQm-13-W96"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="测试键盘" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n30-mL-JTf">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rdZ-64-pPb" firstAttribute="centerY" secondItem="UV2-tr-1aY" secondAttribute="centerY" id="MIM-HP-wKi"/>
+                            <constraint firstItem="n30-mL-JTf" firstAttribute="leading" secondItem="UV2-tr-1aY" secondAttribute="leading" constant="20" id="Ojg-ZY-77o"/>
+                            <constraint firstAttribute="trailing" secondItem="n30-mL-JTf" secondAttribute="trailing" constant="20" id="QmV-Sd-YCQ"/>
+                            <constraint firstItem="n30-mL-JTf" firstAttribute="top" secondItem="aH9-cW-kPJ" secondAttribute="bottom" constant="80" id="eAV-2G-ZfI"/>
+                            <constraint firstItem="rdZ-64-pPb" firstAttribute="centerX" secondItem="UV2-tr-1aY" secondAttribute="centerX" id="tt9-JX-U4K"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjV-GP-BJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gB5-OC-KO6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="37"/>
+        </scene>
+        <!--Navigation Top View Controller-->
+        <scene sceneID="hbs-Ml-bCA">
+            <objects>
+                <viewController id="h8r-qU-JDT" customClass="NavigationTopViewController" customModule="OrentationChange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e56-15-yQ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="F0Y-tt-253"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bZR-QU-qqd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-k8-Q05">
+                                <state key="normal" title="BackToMain"/>
+                                <connections>
+                                    <segue destination="VLb-oh-Eko" kind="unwind" unwindAction="backToOriginWithSegue:" id="lrQ-Yl-tAu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNV-Hs-2js">
+                                <state key="normal" title="只支持横屏"/>
+                                <connections>
+                                    <action selector="onlySupportLandscape:" destination="h8r-qU-JDT" eventType="touchUpInside" id="Nsy-HG-HI5"/>
+                                    <segue destination="79G-C9-ly3" kind="show" identifier="navlandscape" id="Yqb-g4-EsV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tNV-Hs-2js" secondAttribute="trailing" constant="40" id="96a-jr-Hce"/>
+                            <constraint firstItem="H9o-k8-Q05" firstAttribute="centerX" secondItem="bZR-QU-qqd" secondAttribute="centerX" id="L8w-eH-J9V"/>
+                            <constraint firstItem="H9o-k8-Q05" firstAttribute="centerY" secondItem="bZR-QU-qqd" secondAttribute="centerY" id="cbJ-8V-DPH"/>
+                            <constraint firstItem="tNV-Hs-2js" firstAttribute="top" secondItem="e56-15-yQ4" secondAttribute="bottom" constant="49" id="uut-GR-bHT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3nB-xc-vhG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYv-vb-Ndd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VLb-oh-Eko" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="795"/>
+        </scene>
+        <!--Landscape Nav View Controller-->
+        <scene sceneID="pfD-ld-zjN">
+            <objects>
+                <viewController id="79G-C9-ly3" customClass="LandscapeNavViewController" customModule="OrentationChange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p6C-Co-gzQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="OtI-et-35K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MWp-w4-hKh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZz-tK-kWJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="测试键盘" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-a8-R00">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TA2-a8-R00" firstAttribute="leading" secondItem="MWp-w4-hKh" secondAttribute="leading" constant="20" id="3HA-WZ-uXy"/>
+                            <constraint firstAttribute="trailing" secondItem="TA2-a8-R00" secondAttribute="trailing" constant="20" id="URa-FQ-VJw"/>
+                            <constraint firstItem="TA2-a8-R00" firstAttribute="top" secondItem="p6C-Co-gzQ" secondAttribute="bottom" constant="60" id="duA-cK-aVo"/>
+                            <constraint firstItem="KZz-tK-kWJ" firstAttribute="centerX" secondItem="MWp-w4-hKh" secondAttribute="centerX" id="ryq-S9-f9t"/>
+                            <constraint firstItem="KZz-tK-kWJ" firstAttribute="centerY" secondItem="MWp-w4-hKh" secondAttribute="centerY" id="tAs-jq-r97"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVX-PF-ziQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="795"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yFh-bS-w9c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h8G-7Y-U4R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aBw-DJ-myj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h8r-qU-JDT" kind="relationship" relationship="rootViewController" id="UjP-YD-tvF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxW-TP-hZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="795"/>
+        </scene>
+    </scenes>
+</document>
